@@ -36,4 +36,60 @@ Symbolic link or soft link is just a short cut which points to the original file
 
         `ln -s <path-to-target-file> <path-to-link-file>`
         `readlink <file-name>` - to find soft link target
-     
+        
+## File permission
+
+To change the file or directory to another group
+`chgrp <group-name> <file/dir>`
+
+To change the file or directory to another user
+`chown <owner-name> <file/dir>`
+
+To change the file or directory to another group/user
+`chown <owner-name>:<group-name> <file/dir>`
+
+To set permission
+`chmod <permission> <file/dir>`
+
+|                |options                        |example                      |
+|----------------|-------------------------------|-----------------------------|
+|user            |u+  u-  u=                     | u+rwx u-rwx u=rwx           |
+|group           |g+  g-  g=                     | g+rwx g-rwx g=rwx           |
+|others          |o+  o-  o=                     | o+rwx o-rwx o=rwx           |
+
+
+`chmod u+rw, g=r, o= <file/dir>`
+
+#### Using octal value
+
+| rw- | r-- | --- |
+|-----|---- | ----|
+| 110 | 100 | 000 |
+
+<br/>
+
+| Binary | Decimal |                          
+| ------- | --------- |
+| 000 | 0 |
+| 001 | 1 |
+| 010 | 2 |
+| 011 | 3 | 
+| 100 | 4 |
+| 101 | 5 |
+| 110 | 6 |
+| 111 | 7 |
+
+<br/>
+
+| Permission | Value |
+| -----      | ---   |
+r | 4
+w | 2
+x | 1
+
+
+#### Binary to decimal conversion
+
+110 = (1x2<sup>2</sup> + 1x2<sup>1</sup> + 0x2<sup>0</sup>)
+
+`chmod 640 <file/dir>`

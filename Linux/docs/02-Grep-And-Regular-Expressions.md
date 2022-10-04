@@ -3,13 +3,12 @@
 `grep <options> <search-pattern> <file>/<dir>`
 
 options:
-
-i - case-insensitive
-r - recursively look under specified directory and it's sub directories
-c - Total number of times that string appeared in the file
-v - invert-match
-w - only exactly matched words
-o - only-matching
+- i - case-insensitive
+- r - recursively look under specified directory and it's sub directories
+- c - Total number of times that string appeared in the file
+- v - invert-match
+- w - only exactly matched words
+- o - only-matching
 
 ## Regular expression
 

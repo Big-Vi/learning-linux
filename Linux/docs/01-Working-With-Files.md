@@ -129,7 +129,7 @@ users can create files, read and execute files owned by other users, but are not
 `find <path-to-dir> <search-param> <file-name>`  
 `find /var/www -name "*.txt"` - Find all the text file under /var/www directory  
 `find -mtime 3` - To get files modified in the last 3 days  
-`find -name "*.txt" -mtime +10 -daystart` - To get all text files modified 10 or more days ago 
+`find -name "*.txt" -mtime +10 -daystart` - To get all text files modified 10 or more days ago  
 `find . -name "*.txt" -delete` - To delete all the matching files  
 
 #### Search param list

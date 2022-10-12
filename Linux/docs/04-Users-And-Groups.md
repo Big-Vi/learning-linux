@@ -122,3 +122,19 @@ To delete the group
 ## Template user environment
 
 If you create files under `/etc/skel/`, those files gets created when new user added.
+
+
+## Root account
+
+`su -` or `sudo --login`
+`logout`
+`sudo passwd root`
+`sudo passwd --unlock root`
+`sudo passwd --lock root`
+
+
+## Configure PAM
+
+PAM - Pluggable Authentication Module
+
+`/etc/pam.d` - Config files

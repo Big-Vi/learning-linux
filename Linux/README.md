@@ -6,4 +6,5 @@
    - [03 - Archive, Compress & Backup](docs/03-Archive-Compress-Backup.md)
    - [04 - Users and groups](docs/04-Users-And-Groups.md)
    - [05 - Input-Output redirection](docs/05-Input-Output-Redirection.md)
+   - [06 - System operations](docs/06-System-Operations.md)
 

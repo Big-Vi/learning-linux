@@ -9,4 +9,4 @@
    - [06 - System operations](docs/06-System-Operations.md)
    - [07 - Process management](docs/07-Process-Management.md)
    - [08 - System logs](docs/08-System-Logs.md)
-
+   - [09 - Scheduled jobs](docs/09-Scheduled-Jobs.md)

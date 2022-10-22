@@ -12,5 +12,6 @@
    - [09 - Scheduled jobs](docs/09-Scheduled-Jobs.md)
    - [10 - Software & Resources](docs/10-Software-And-Resources.md)
    - [11 - Kernel](docs/11-Kernel.md)
+   - [12 - SELinux](docs/12-SELinux.md)
 
 

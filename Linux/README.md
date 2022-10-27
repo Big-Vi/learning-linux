@@ -14,5 +14,6 @@
    - [11 - Kernel](docs/11-Kernel.md)
    - [12 - SELinux](docs/12-SELinux.md)
    - [13 - User resource limits](docs/13-User-Resource-Limits.md)
+   - [14 - User previleges](docs/14-User-Previleges.md)
 
 

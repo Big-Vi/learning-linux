@@ -16,4 +16,5 @@
    - [13 - User resource limits](docs/13-User-Resource-Limits.md)
    - [14 - User previleges](docs/14-User-Previleges.md)
    - [15 - Networking](docs/15-Networking.md)
+   - [16 - Storage](docs/16-Storage.md)
 

@@ -9,9 +9,9 @@ ls
 pwd  
 - Print working directory  
 
-`cp <source><destination>` - `cp file.txt directory/`  
+`cp <source> <destination>` - `cp file.txt directory/`  
 - `-r` Copy recursively  
-	`cp FromDirectory/ ToDirectory/`  
+	e.g, `cp -r FromDirectory/ ToDirectory/`  
 
 `mv <source> <destination>`  
 > mv command don't need to use -r flag to move all files.  
@@ -129,8 +129,15 @@ users can create files, read and execute files owned by other users, but are not
 `find <path-to-dir> <search-param> <file-name>`  
 `find /var/www -name "*.txt"` - Find all the text file under /var/www directory  
 `find -mtime 3` - To get files modified in the last 3 days  
+`find -mmin 5` - To get files modified in the last 5 minutes
 `find -name "*.txt" -mtime +10 -daystart` - To get all text files modified 10 or more days ago  
 `find . -name "*.txt" -delete` - To delete all the matching files  
+`find . -iname file.txt` - To make find command to be case insensitive   
+`find . -type f -exec cp "{}" /tmp \;` Or  
+`find . -type f -exec cp "{}" /tmp +` - To copy all the files from current directory to tmp using exec flag.  
+`find . -perm 644` or `find . -perm u=rw,g=r,o=r` - Find file with exact 644 permission match
+`find . -perm -644` or `find . -perm -u=rw,g=r,o=r` - Find files with atleast 644 permission
+`find . -perm \644` or `find . -perm \u=rw,g=r,o=r` - Find files with any of these permissions. e.g, user with just read permission match this condition
 
 #### Search param list
 
@@ -147,7 +154,7 @@ users can create files, read and execute files owned by other users, but are not
 `find -size +512k -o -name "f*"` - OR   
 `find -size +512k -name "f*"` - AND  
 `find -not -size +1M` - NOT  
-`find \! -size +1M` - NOT  
+`find \! -size +1M` - NOT - Escape ! with backslash 
 
 > Modified time is related to data of the file  
 > Change time is related to metadata of the file  

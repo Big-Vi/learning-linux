@@ -83,7 +83,7 @@ To add group
 `groupadd <group-name>`  
 
 To find members of the group  
-`getent group <group-name`  
+`getent group <group-name>`  
 
 To list groups  
 `cat /etc/group`  

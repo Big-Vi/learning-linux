@@ -43,3 +43,4 @@ add ampersand character(&) at the end of command to make the app work in the bac
 Which files and directory particular app is using  
 
 `lsof -p <PID>` ls=list of=openfile p=process  
+`rpm -qf <file-path>` - To find what package owns the file	

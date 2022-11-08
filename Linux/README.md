@@ -18,4 +18,5 @@
    - [15 - Networking](docs/15-Networking.md)
    - [16 - Storage](docs/16-Storage.md)
    - [17 - DNS Cache](docs/17-DNS-Cache.md)
+   - [18 - DNS Zone](docs/18-DNS-Zone.md)
 

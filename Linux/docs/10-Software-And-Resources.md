@@ -63,5 +63,7 @@ s=summaries h=human readable format
 `lspci` - Other hardware usage  
 
 `xfs_repair -v /dev/vdb1` - To repair an XFS filesystem  
+`sudo fsck.ext4 -p /dev/sdb1` - To repair an ext4 filesystem
+fsck utility - File System Consistency  Check
 
 `systemctl list-dependencies`  

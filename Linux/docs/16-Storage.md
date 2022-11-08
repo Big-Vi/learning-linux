@@ -61,6 +61,7 @@ N = number of inode
 `umount /mnt`  
 
 `vi /etc/fstab` - Define what should mount auto when system boots  
+`systemctl daemon-reload` - To update systemd
 
 `blkid /dev/vdb1` - To get uuid  
 

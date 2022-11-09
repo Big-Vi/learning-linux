@@ -19,4 +19,5 @@
    - [16 - Storage](docs/16-Storage.md)
    - [17 - DNS Cache](docs/17-DNS-Cache.md)
    - [18 - DNS Zone](docs/18-DNS-Zone.md)
+   - [19 - Email Aliases](docs/19-Email-Aliases.md)
 

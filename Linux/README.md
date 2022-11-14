@@ -21,4 +21,5 @@
    - [18 - DNS Zone](docs/18-DNS-Zone.md)
    - [19 - Email Aliases](docs/19-Email-Aliases.md)
    - [20 - IMAPS](docs/20-IMAPS.md)
+   - [21 - SSH](docs/21-SSH-Server-Client.md)
 

@@ -22,4 +22,6 @@
    - [19 - Email Aliases](docs/19-Email-Aliases.md)
    - [20 - IMAPS](docs/20-IMAPS.md)
    - [21 - SSH](docs/21-SSH-Server-Client.md)
+   - [22 - HTTP Proxy Server](docs/22-HTTP-Proxy-Server.md)
+   - [23 - Web Server](docs/23-Web-Server.md)
 

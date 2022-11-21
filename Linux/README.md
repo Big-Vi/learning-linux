@@ -24,4 +24,5 @@
    - [21 - SSH](docs/21-SSH-Server-Client.md)
    - [22 - HTTP Proxy Server](docs/22-HTTP-Proxy-Server.md)
    - [23 - Web Server](docs/23-Web-Server.md)
+   - [24 - Database Server](docs/24-Database-Server.md)
 

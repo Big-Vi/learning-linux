@@ -25,4 +25,6 @@
    - [22 - HTTP Proxy Server](docs/22-HTTP-Proxy-Server.md)
    - [23 - Web Server](docs/23-Web-Server.md)
    - [24 - Database Server](docs/24-Database-Server.md)
+   - [25 - Container](docs/25-Container.md)
+   - [26 - Virtual Machine](docs/26-Virtual-Machine.md)
 

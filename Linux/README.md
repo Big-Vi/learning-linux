@@ -27,5 +27,9 @@
    - [24 - Database Server](docs/24-Database-Server.md)
    - [25 - Container](docs/25-Container.md)
    - [26 - Virtual Machine](docs/26-Virtual-Machine.md)
+   - [27 - Load average](docs/27-Load-Average.md)
+   - [28 - Huge Pages and Transparent Huge Pages](docs/28-Huge-Pages-And-Transparent-Huge-Pages.md)
+   - [29 - cgroup](docs/29-cgroups.md)
+   - [100 - Apache VirtualHost](docs/100-Apache-VirtualHost.md)
    - [102 - System Documentation](docs/102-System-Documentation.md)
 

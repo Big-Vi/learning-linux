@@ -6,3 +6,5 @@ Ansible is an automation tool to automate Config management, Provisioning, Conti
 - [03 - Facts](docs/03-Facts.md)
 - [04 - Config Files](docs/04-Config-Files.md)
 - [05 - Ad-hoc Commands](docs/05-Ad-hoc-Commands.md)
+- [06 - Modules](docs/06-Modules.md)
+- [07 - Variables](docs/07-Variables.md)

@@ -14,3 +14,5 @@ Ansible is an automation tool to automate Config management, Provisioning, Conti
 - [11 - Blocks](docs/11-Blocks.md)
 - [12 - Error Handling](docs/12-Error-Handling.md)
 - [13 - Parallelism](docs/13-Parallelism.md)
+- [14 - File Separation](docs/14-File-Separation.md)
+- [15 - Roles](docs/15-Roles.md)

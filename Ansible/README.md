@@ -16,3 +16,7 @@ Ansible is an automation tool to automate Config management, Provisioning, Conti
 - [13 - Parallelism](docs/13-Parallelism.md)
 - [14 - File Separation](docs/14-File-Separation.md)
 - [15 - Roles](docs/15-Roles.md)
+- [16 - Vault](docs/16-Vault.md)
+- [17 - Privilege Escalation](docs/17-Privilege-Escalation.md)
+- [18 - Dynamic Inventory](docs/18-Dynamic-Inventory.md)
+- [19 - SSH Keys](docs/19-SSH-Keys.md)

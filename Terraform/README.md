@@ -5,3 +5,5 @@ Terraform is written in HCL(HashiCorp Configuration Language) & it's a declarati
 - [02 - Terraform Providers](docs/02-Terraform-Providers.md)
 - [03 - Version Constraints](docs/03-Version-Constraints.md)
 - [04 - Aliases](docs/04-Aliases.md)
+- [05 - Variables](docs/05-Variables.md)
+- [06 - Output Variables](docs/06-Output-Variables.md)

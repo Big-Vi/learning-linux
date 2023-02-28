@@ -9,3 +9,5 @@ Terraform is written in HCL(HashiCorp Configuration Language) & it's a declarati
 - [06 - Output Variables](docs/06-Output-Variables.md)
 - [07 - Resource Attributes And Dependancies](docs/07-Resource-Attributes-And-Dependancies.md)
 - [08 - Resource Targeting](docs/08-Resource-Targeting.md)
+- [09 - Data Sources](docs/09-Data-Sources.md)
+- [10 - Terraform State](docs/10-Terraform-State.md)

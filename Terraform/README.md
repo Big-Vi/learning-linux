@@ -11,3 +11,5 @@ Terraform is written in HCL(HashiCorp Configuration Language) & it's a declarati
 - [08 - Resource Targeting](docs/08-Resource-Targeting.md)
 - [09 - Data Sources](docs/09-Data-Sources.md)
 - [10 - Terraform State](docs/10-Terraform-State.md)
+- [11 - Remote State](docs/11-Remote-State.md)
+- [12 - Terraform Commands](docs/12-Terraform-Commands.md)

@@ -13,3 +13,5 @@ Terraform is written in HCL(HashiCorp Configuration Language) & it's a declarati
 - [10 - Terraform State](docs/10-Terraform-State.md)
 - [11 - Remote State](docs/11-Remote-State.md)
 - [12 - Terraform Commands](docs/12-Terraform-Commands.md)
+- [13 - Lifecycle Rules](docs/13-Lifecycle-Rules.md)
+- [14 - Terraform Taint](docs/14-Terraform-Taint.md)

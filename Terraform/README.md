@@ -17,3 +17,5 @@ Terraform is written in HCL(HashiCorp Configuration Language) & it's a declarati
 - [14 - Terraform Taint](docs/14-Terraform-Taint.md)
 - [15 - Debugging](docs/15-Debugging.md)
 - [16 - Terraform Import](docs/16-Terraform-Import.md)
+- [17 - Terraform Workspace](docs/17-Terraform-Workspace.md)
+- [18 - Count And For Each](docs/18-Count-And-ForEach.md)

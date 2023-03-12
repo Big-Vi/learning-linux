@@ -23,3 +23,5 @@ Terraform is written in HCL(HashiCorp Configuration Language) & it's a declarati
 - [20 - Builtin Functions](docs/20-Builtin-Functions.md)
 - [21 - Local Values](docs/21-Local-Values.md)
 - [22 - Dynamic Blocks](docs/22-Dynamic-Blocks.md)
+- [23 - Splat Expressions](docs/23-Splat-Expressions.md)
+- [24 - Terraform Modules](docs/24-Terraform-Modules.md)

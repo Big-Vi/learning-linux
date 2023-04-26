@@ -6,3 +6,4 @@
 - [03 - Protocols & Port Numbers](docs/03-Protocols-And-Port-Numbers.md)
 - [04 - TCP](docs/04-TCP.md)
 - [05 - UDP](docs/05-UDP.md)
+- [06 - Transport Layer Addressing](docs/06-Transport-Layer-Addressing.md)

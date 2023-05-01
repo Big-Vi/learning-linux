@@ -8,3 +8,4 @@
 - [05 - UDP](docs/05-UDP.md)
 - [06 - Transport Layer Addressing](docs/06-Transport-Layer-Addressing.md)
 - [07 - Binary-Decimal-Hexadecimal](docs/07-Binary-Decimal-Hexadecimal.md)
+- [08 - IP Addressing](docs/08-IP-Addressing.md)

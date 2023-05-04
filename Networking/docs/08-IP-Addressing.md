@@ -30,12 +30,12 @@ E.g., Sending an e-mail to a mailing list Or Radio channel.
 
 ## Classless Addressing - After 1995
 
-To figure out Network and Host Portion, a subnet mask can be used. Add 1 for the Network Portion and 0 for the Host Portion.
+To figure out Network and Host Portion, a subnet mask can be used. Add 1 for the Network Portion and 0 for the Host Portion.  
 
-204.10.0.114   -> IP
-11111111.11111111.11111111.00000000 -> Subnet mask
-255.255.255.0  -> Subnet mask
+204.10.0.114   -> IP  
+11111111.11111111.11111111.00000000 -> Subnet mask  
+255.255.255.0  -> Subnet mask  
 
-10.0.0.10
-11111111 11111111 11110000 00000000
-255.255.240.0
+10.0.0.10  
+11111111 11111111 11110000 00000000  
+255.255.240.0  

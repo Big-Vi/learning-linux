@@ -9,3 +9,4 @@
 - [06 - Transport Layer Addressing](docs/06-Transport-Layer-Addressing.md)
 - [07 - Binary-Decimal-Hexadecimal](docs/07-Binary-Decimal-Hexadecimal.md)
 - [08 - IP Addressing](docs/08-IP-Addressing.md)
+- [09 - Address Types](docs/09-Address-Types.md)

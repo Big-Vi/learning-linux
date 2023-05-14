@@ -11,3 +11,4 @@
 - [08 - IP Addressing](docs/08-IP-Addressing.md)
 - [09 - Address Types](docs/09-Address-Types.md)
 - [10 - CIDR Notation](docs/10-CIDR-Notation.md)
+- [11 - Private IP Address](docs/11-Private-IP-Address.md)

@@ -12,3 +12,4 @@
 - [09 - Address Types](docs/09-Address-Types.md)
 - [10 - CIDR Notation](docs/10-CIDR-Notation.md)
 - [11 - Private IP Address](docs/11-Private-IP-Address.md)
+- [12 - Subnetting Networks](docs/12-Subnetting-Networks.md)

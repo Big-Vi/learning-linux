@@ -19,11 +19,11 @@
 
 ## Courses to learn more
 
-> 1 - Network interface layer & Ehternet operation. 
-> 2- Network Layer Addressing and Operation for Cisco CCNA 200-125/100-105 - Advanced Subnetting course
-> 3 - Intoduction to VLANS from Cisco
-> 4 - Routing IPv4 & IPv6 CCNA
-> 5 - Introduction to dynamic routing
-> 6 - Network Address Translation
-> 7 - Access Control Lists
-> 8 - Network Layer Addressing and Subnetting
+> 1 - Network interface layer & Ehternet operation.  
+> 2- Network Layer Addressing and Operation for Cisco CCNA 200-125/100-105 - Advanced Subnetting course  
+> 3 - Intoduction to VLANS from Cisco  
+> 4 - Routing IPv4 & IPv6 CCNA  
+> 5 - Introduction to dynamic routing  
+> 6 - Network Address Translation  
+> 7 - Access Control Lists  
+> 8 - Network Layer Addressing and Subnetting  

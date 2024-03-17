@@ -1,4 +1,4 @@
-use core::char;
+use core::{char, fmt};
 
 fn main() {
     let mut my_var: u8 = 50;
@@ -481,7 +481,156 @@ fn main() {
     struct Color(i32, i32, i32); // RGB
     let blue = Color(0, 0, 255);
     println!("Tuple Structs: {:?}", blue);
-    println!("Last value {}", blue.2)
+    println!("Last value {}", blue.2);
+
+    // Generic Structs
+    // Generic structs are a way to create a struct that can hold any type
+    #[derive(Debug)]
+    struct Point<T> {
+        x: T,
+        y: T,
+    }
+    let integer = Point { x: 5, y: 10 };
+    let float = Point { x: 1.0, y: 4.0 };
+    println!("Generic Structs: {}, {}", integer.x, integer.y);
+    println!("Generic Structs: {:?}", float);
+
+    // Struct with multiple types
+    #[derive(Debug)]
+    struct Point2<T, U> {
+        x: T,
+        y: U,
+    }
+    let both = Point2 { x: 5, y: 4.0 };
+    println!("Struct with multiple types: {}, {}", both.x, both.y);
+
+    // Runtime performance - Generics
+    // Zero cost abstraction
+    // What is zero cost abstraction - It means that the abstraction does not cost anything at runtime
+    // Writing code easier without introducing runtime overhead
+    // Rust uses monomorphization to create a new type for each type
+    // Monomorphic code is faster than polymorphic code
+    // Compiler replaces the generic type with the actual/concrete type
+    struct Point3<T, U> {
+        x: T,
+        y: U,
+    }
+    let monomorphization = Point3 { x: 5, y: 10.00 };
+    println!("Runtime performance: {}, {}", monomorphization.x, monomorphization.y);
+    // What gets compiled
+    // struct Point3_i32_f64 {
+    //     x: i32,
+    //     y: f64,
+    // }
+    // let monomorphization = Point3_i32_f64 { x: 5, y: 10.00 };
+
+    // Generic method definition
+    impl<T, U> Point3<T, U> {
+        fn mixup<V, W>(self, other: Point3<V, W>) -> Point3<T, W> {
+            Point3 {
+                x: self.x,
+                y: other.y,
+            }
+        }
+    }
+    let p1 = Point3 { x: 5, y: 10.4 };
+    let p2 = Point3 { x: "Hello", y: 'c' };
+    let p3 = p1.mixup(p2);
+    println!("Generic method definition: {}, {}", p3.x, p3.y);
+
+    // Concrete method implementation
+    impl Point3<i32, f64> {
+        fn mixup_concrete(self, other: Point3<&str, char>) -> Point3<i32, char> {
+            Point3 {
+                x: self.x,
+                y: other.y,
+            }
+        }
+    }
+    let p1 = Point3 { x: 5, y: 10.4 };
+    let p2 = Point3 { x: "Hello", y: 'c' };
+    let p3 = p1.mixup_concrete(p2);
+    println!("Concrete method implementation: {}, {}", p3.x, p3.y);
+
+    // Generic function definition
+    // PartialOrd is a trait
+    // Trait is a way to define a set of methods that a type must implement
+    // PartialOrd is a trait that defines the comparison methods
+    // Rust has a set of traits that are implemented for the standard library types
+    fn largest<T: PartialOrd>(a: T, b: T) -> T {
+        if a > b {
+            a
+        } else {
+            b
+        }
+    }
+    println!("Generic function definition: {}", largest(5, 10));
+
+    // Box data type
+    // Box is a smart pointer, because it's a pointer that has additional metadata
+    // Box is a way to store the data in the heap and get the pointer to the data
+    let my_box = Box::new(5); // Now the data is stored in the heap
+    println!("Box data type: {}", my_box);
+    // Why use Box
+    // Store the type that has unknown size at compile time
+    // ex - Recursive data type
+    // Store the type that has large size
+    // ex - Large struct
+    // Store the type that has a lifetime that is shorter than the reference
+    // ex - Return the reference to the local variable
+    // Transfer the ownership of data rather than copy it on the stack
+
+    // Traits
+    // Traits are a way to define a set of methods that a type must implement
+    // Data types that implement the trait are called the implementors
+    // Generic use traits to define the set of methods that the type must implement
+    // It's similar to interface in other languages
+    struct NewsArticle {
+        headline: String,
+        location: String,
+    }
+    // Trait with default implementation
+    trait Summary {
+        fn summarize(&self) -> String {
+            String::from("Read more...")
+        }
+    }
+    impl Summary for NewsArticle {
+        fn summarize(&self) -> String {
+            format!("{}, {}", self.headline, self.location)
+        }
+    }
+    let news = NewsArticle {
+        headline: String::from("News"),
+        location: String::from("Location"),
+    };
+    println!("Traits: {}", news.summarize());
+
+    // Derive traits
+    // Rust has a set of traits that are implemented for the standard library types
+    // Provides the default implementation for the common traits
+    // Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash
+    // #[derive(Debug)]
+    // #[derive(Clone, Copy)]
+    // Compare the data type and use derive
+    #[derive(PartialEq, PartialOrd)]
+    struct Point4 {
+        x: i32,
+        y: i32,
+    }
+    let p1 = Point4 { x: 5, y: 10 };
+    let p2 = Point4 { x: 5, y: 10 };
+    println!("Derive traits: {}", p1 == p2);
+    println!("Derive traits: {}", p1 > p2);
+
+    // Trait bounds
+    // Trait bounds are a way to define the set of methods that a type must implement
+    fn print_type<T: fmt::Debug>(t: T) {
+        println!("Trait bounds: {:?}", t);
+    }
+    print_type(5);
+    print_type("Hello");
+    print_type([9, 8, 7]);
 }
 
 fn my_function(my_string: &str) {

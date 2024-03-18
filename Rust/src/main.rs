@@ -631,6 +631,93 @@ fn main() {
     print_type(5);
     print_type("Hello");
     print_type([9, 8, 7]);
+
+    // Multiple trait bounds
+    // Compare and print
+    fn compare_and_print<T, U>(a: T, b: U) 
+        where T: fmt::Debug + PartialEq + From<U>, 
+              U: fmt::Debug + PartialEq + Copy
+    {
+        if a == T::from(b) {
+            println!("Trait bounds: {:?}", a);
+        } else {
+            println!("Trait bounds: {:?}", b);
+        }
+    }
+    compare_and_print(5.5, 5);
+    compare_and_print("Hello", "Hello");
+
+    // Return type with implemented traits
+    // As long as the return value's type implements the trait, we can return the value.
+    fn return_type_with_trait_bounds() -> impl fmt::Debug {
+        2
+    }
+    println!("Return type with implemented traits: {:?}", return_type_with_trait_bounds());
+
+    // Lifetime
+    // Lifetime is a way to define the scope of the reference
+    // Borrow checker checks the lifetime of the reference
+    
+    // Lifetime annotation
+    // Lifetime annotation is a way to define the lifetime  for parameters and return type
+    // Must begin with an apostrophe
+    // 'a is a lifetime - Convention is to use a single letter
+    fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+        if x.len() > y.len() {
+            x
+        } else {
+            y
+        }
+    }
+    let string1 = String::from("abcd");
+    let string2 = "xyz";
+    let result = longest(string1.as_str(), string2);
+    println!("Lifetime annotation: {}", result);
+
+    // Multiple lifetime annotation
+    fn longest2<'a, 'b>(x: &'a str, y: &'b str) -> &'a str {
+        if x.len() > y.len() {
+            x
+        } else {
+            x
+        }
+    }
+    let result;
+    let string1 = String::from("abcd");
+    {
+        let string2 = "xyz";
+        result = longest2(string1.as_str(), string2);
+    }
+    println!("Multiple lifetime annotation: {}", result);
+
+    // Lifetime elision rules
+    // Lifetime elision rules are a way to define the lifetime without the lifetime annotation
+    // Rust has a set of rules that the compiler uses to define the lifetime
+    // Rule 1 - Each parameter that is a reference gets its own lifetime
+    // Rule 2 - If there is exactly one input lifetime parameter, that lifetime is assigned to all output lifetime parameters
+    // Rule 3 - If there are multiple input lifetime parameters, but one of them is &self or &mut self, the lifetime of self is assigned to all output lifetime parameters
+    // Rule 4 - If there are multiple input lifetime parameters, and none of them are &self or &mut self, the lifetime of the output lifetime parameters is assigned to the lifetime of the input lifetime parameters
+
+    // Struct lifetime annotation
+    // Struct lifetime annotation is a way to define the lifetime for the struct
+    struct ImportantExcerpt<'a> {
+        part: &'a str,
+    }
+    impl<'a> ImportantExcerpt<'a> {
+        fn level(&self) -> i32 {
+            3
+        }
+    }
+    let novel = String::from("Call me Ishmael. Some years ago...");
+    let first_sentence = novel.split('.').next().expect("Could not find a '.'");
+    let i = ImportantExcerpt { part: first_sentence };
+    println!("Struct lifetime annotation: {}", i.part);
+    println!("{}", i.level());
+
+    // Static lifetime
+    // Static lifetime is a way to define the lifetime for the entire program
+    let s: &'static str = "I have a static lifetime";
+    println!("Static lifetime: {}", s);
 }
 
 fn my_function(my_string: &str) {

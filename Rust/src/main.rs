@@ -718,6 +718,78 @@ fn main() {
     // Static lifetime is a way to define the lifetime for the entire program
     let s: &'static str = "I have a static lifetime";
     println!("Static lifetime: {}", s);
+
+    // Enum
+    // Enum is a way to define a custom data type
+    #[derive(Debug)]
+    enum IpAddrKind {
+        V4(u8, u8, u8, u8),
+        V6(String),
+    }
+    let four = IpAddrKind::V4(127, 0, 0, 1);
+    let six = IpAddrKind::V6(String::from("::1"));
+    println!("Enum: {:?} {:?}", four, six);
+
+    // Match operator
+    // Match operator is a way to compare the value with the pattern
+    match four {
+        IpAddrKind::V4(a, b, c, d) => println!("Match operator: {}.{}.{}.{}", a, b, c, d),
+        IpAddrKind::V6(ref e) => println!("Match operator: {}", e),
+    }
+
+    // Match with default placeholder
+    match six {
+        IpAddrKind::V4(_, _, _, _) => println!("Match with default placeholder: V4"),
+        IpAddrKind::V6(_) => println!("Match with default placeholder: V6"),
+    }
+
+    // Enum methods
+    impl IpAddrKind {
+        fn call(&self) -> String {
+            match self {
+                IpAddrKind::V4(a, b, c, d) => format!("{}.{}.{}.{}", a, b, c, d),
+                IpAddrKind::V6(e) => format!("{}", e),
+            }
+        }
+    }
+    println!("Enum methods: {}", four.call());
+
+    // Option<T> enum
+    // Option enum is a way to handle the null value
+    // Option enum is a way to handle the null value without using the null and the exception
+    // enum Option<T> {
+    //     Some(T),
+    //     None,
+    // }
+    let some_number = Some(5);
+    let some_string = Some("a string");
+    let absent_number: Option<i32> = None;
+    println!("Option<T> enum: {:?} {:?} {:?}", some_number, some_string, absent_number);
+
+    let my_array = [1, 2, 3, 4, 5];
+    let my_array_element = my_array.get(2);
+    let my_array_none = my_array.get(10);
+    println!("Option<T> enum value: {:?}", my_array_element);
+    println!("Option<T> enum None: {:?}", my_array_none);
+    // extract the value from the Option enum
+    println!("Extracting Option<T> enum: {:?}", my_array_element.unwrap_or(&0));
+    // unwrap_or - If the value is Some, return the value. If the value is None, return the default value
+    // &0 - Default value if the value is None - 0 is matching the Option enum data type
+
+    // Match with Option<T> enum
+    let my_array = [1, 2, 3, 4, 5];
+    match my_array.get(2) {
+        Some(value) => println!("Match with Option<T> enum: {}", value),
+        None => println!("Match with Option<T> enum: None"),
+    }
+
+    // If let with Option<T> enum
+    let my_array = [1, 2, 3, 4, 5];
+    if let Some(value) = my_array.get(2) {
+        println!("If let with Option<T> enum: {}", value);
+    } else {
+        println!("If let with Option<T> enum: None");
+    }
 }
 
 fn my_function(my_string: &str) {

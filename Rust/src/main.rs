@@ -790,6 +790,56 @@ fn main() {
     } else {
         println!("If let with Option<T> enum: None");
     }
+
+    // Errors
+    // Recoverable errors - E.g. File not found
+    // Unrecoverable errors - E.g. Out of memory
+    // Rust dones not have exceptions
+    // Rust uses the Result enum to handle the recoverable errors
+    // Panic! macro is used to handle the unrecoverable errors
+    // panic!("Program will crash");
+
+    // Result<T, E> enum
+    // Result enum is a way to handle the recoverable errors without using the exception
+    // enum Result<T, E> {
+    //     Ok(T), // Success
+    //     Err(E), // Failure
+    // }
+    // let contents = fs::read_to_string("file_not_exist.txt");
+    let contents = fs::read_to_string("food.txt").expect("Failed to read file");
+    println!("Result<T, E> enum: {:?}", contents);
+
+    // Match with Result<T, E> enum
+    let contents = match fs::read_to_string("food.txt") {
+        Ok(value) => value,
+        Err(error) => panic!("Match with Result<T, E> enum: {:?}", error),
+    };
+    println!("Result<T, E> enum: {:?}", contents);
+
+    // Error kind
+    // Error kind is a way to define the type of error
+    let _contents = match fs::read_to_string("food.txt") {
+        Ok(value) => value,
+        Err(error) => match error.kind() {
+            std::io::ErrorKind::NotFound => match fs::write("food.txt", "Default content") {
+                Ok(_) => fs::read_to_string("food.txt").unwrap(),
+                Err(error) => panic!("Error kind: {:?}", error),
+            },
+            std::io::ErrorKind::PermissionDenied => panic!("Error kind: {:?}", error),
+            _ => panic!("Error kind: {:?}", error),
+        },
+    };
+
+    // Propagating errors
+    // Propagating errors is a way to return the error to the caller
+    // Use the ? operator to return the error to the caller
+    // ? operator is a way to return the error to the caller without using the match and the unwrap
+    fn read_file() -> Result<String, std::io::Error> {
+        let contents = fs::read_to_string("food.txt")?;
+        Ok(contents)
+    }
+    let contents = read_file().expect("Failed to read file");
+    println!("Propagating errors: {:?}", contents);
 }
 
 fn my_function(my_string: &str) {

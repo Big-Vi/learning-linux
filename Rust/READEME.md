@@ -31,3 +31,4 @@ compression and encryption algorithms.
 
 `cargo run`
 
+Set env RUST_BACKTRACE=1 to track bug.

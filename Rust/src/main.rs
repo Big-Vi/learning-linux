@@ -840,6 +840,41 @@ fn main() {
     }
     let contents = read_file().expect("Failed to read file");
     println!("Propagating errors: {:?}", contents);
+
+    // Vectors
+    // Vectors are a way to store the data in the heap and get the pointer to the data
+    // Since it's stored in the heap, We need to handle the memory management like the ownership, borrowing, and lifetime
+    // Collection of the same type & stored in order.
+    let mut my_vector = vec![1, 2, 3, 4, 5];
+    println!("Vectors: {:?}", my_vector);
+    println!("Vectors: {}", my_vector[2]);
+    my_vector.pop();
+    println!("Vectors: {:?}", my_vector);
+    // Unkike array, Compiler can't check the index out of bound because it's stored in the heap and it's dynamic. can only be known at runtime.
+    // Use get method to safely get the value
+    println!("Vectors: {:?}", my_vector.get(3));
+    my_vector.pop();
+    println!("Vectors: {:?}", my_vector.get(3));
+
+    // Hash map
+    // Hash map is a way to store the data in the heap and get the pointer to the data & store the data in the key-value pair
+    // Uses a hash function to map the key to the value
+    let mut my_hash_map = std::collections::HashMap::new();
+    my_hash_map.insert("one", 1);
+    my_hash_map.insert("two", 2);
+    println!("Hash map: {:?}", my_hash_map);
+    println!("Hash map: {:?}", my_hash_map.get("two"));
+    my_hash_map.remove("two");
+    println!("Hash map: {:?}", my_hash_map);
+    my_hash_map.insert("three", 3);
+    println!("Hash map: {:?}", my_hash_map);
+    my_hash_map.entry("four").or_insert(4);
+    println!("Hash map: {:?}", my_hash_map);
+    my_hash_map.entry("four").or_insert(5);
+    println!("Hash map: {:?}", my_hash_map);
+    let increment_four = my_hash_map.entry("four").or_insert(0);
+    *increment_four += 1;
+    println!("Hash map: {:?}", my_hash_map);
 }
 
 fn my_function(my_string: &str) {
